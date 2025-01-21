@@ -26,10 +26,10 @@ col2.markdown("<h1 style='text-align: center;'>Painel de Monitoramento de Simul�
 col1.image('logo_estado (3).png', width=250)
 
 # Carrega dados geoespaciais dos municípios do Rio Grande do Sul
-municipios = gpd.read_file('https://raw.githubusercontent.com/andrejarenkow/geodata/main/municipios_rs_CRS/RS_Municipios_2021.json')
+municipios = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/RS_Municipios_2021.json')
 
 # Carrega dados geoespaciais das regiões de saúde
-regioes_de_saude = gpd.read_file('https://raw.githubusercontent.com/andrejarenkow/geodata/main/Regi%C3%B5es%20de%20Sa%C3%BAde/regioes.json')
+regioes_de_saude = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/regioes_saude_rs.json')
 
 # Carrega dados geoespaciais das coordenadorias do RS
-coordenadorias = gpd.read_file('https://raw.githubusercontent.com/andrejarenkow/geodata/refs/heads/main/RS_por_CRS/RS_por_CRS.json')
+coordenadorias = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/RS_por_CRS.json')
