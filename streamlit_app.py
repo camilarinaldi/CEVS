@@ -83,6 +83,7 @@ fig.update_layout(
         zoom=5.5
     ),
     margin={"r": 0, "t": 0, "l": 0, "b": 0},
+    showlegend=False,  # Desativa a exibição de legendas
     title="Mapa com Linhas e Pontos"
 )
 
