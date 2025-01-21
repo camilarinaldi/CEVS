@@ -33,3 +33,61 @@ regioes_de_saude = gpd.read_file('https://raw.githubusercontent.com/camilarinald
 
 # Carrega dados geoespaciais das coordenadorias do RS
 coordenadorias = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/RS_por_CRS.json')
+
+# Carrega dados geoespaciais do novo arquivo .geojson
+calhas = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/calhas%20fluviais.geojson')
+
+import plotly.graph_objects as go
+import geopandas as gpd
+
+# Inicializar o mapa
+fig = go.Figure()
+
+# Adicionar linhas das coordenadorias
+coordenadorias_boundaries = coordenadorias.boundary
+for geom in coordenadorias_boundaries:
+    if geom.geom_type == 'LineString':
+        coords = list(geom.coords)
+        fig.add_trace(go.Scattermapbox(
+            lon=[c[0] for c in coords],
+            lat=[c[1] for c in coords],
+            mode='lines',
+            line=dict(color='black', width=1),
+            name='Coordenadorias'
+        ))
+    elif geom.geom_type == 'MultiLineString':
+        for line in geom.geoms:
+            coords = list(line.coords)
+            fig.add_trace(go.Scattermapbox(
+                lon=[c[0] for c in coords],
+                lat=[c[1] for c in coords],
+                mode='lines',
+                line=dict(color='black', width=1),
+                name='Coordenadorias'
+            ))
+
+# Adicionar pontos das calhas
+if calhas.geometry.geom_type.isin(['Point']).all():
+    calhas['lon'] = calhas.geometry.x
+    calhas['lat'] = calhas.geometry.y
+    fig.add_trace(go.Scattermapbox(
+        lon=calhas['lon'],
+        lat=calhas['lat'],
+        mode='markers',
+        marker=dict(size=8, color='blue'),
+        name='Calhas'
+    ))
+
+# Configurar o layout do mapa
+fig.update_layout(
+    mapbox=dict(
+        style="carto-positron",
+        center={'lat': -30.452349861219243, 'lon': -53.55320517512141},
+        zoom=5.5
+    ),
+    margin={"r": 0, "t": 0, "l": 0, "b": 0},
+    title="Mapa com Linhas e Pontos"
+)
+
+# Exibir o mapa
+fig.show()
