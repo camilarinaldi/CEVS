@@ -90,7 +90,7 @@ fig.update_layout(
 # Exibir o mapa no Streamlit
 st.plotly_chart(fig)
 
-aba_painel,aba_analise, aba_sobre, aba_indicador, = st.tabs(['Painel','Análise', 'Sobre','Pactuação - Indicador 9',])
+aba_sobre, aba_indicador, = st.tabs(['Sobre','Pactuação - Indicador 9',])
 
 with aba_sobre:
     
@@ -102,8 +102,7 @@ st.header('O que são os Simulídeos?')
 Os borrachudos pertencem à classe Insecta, ordem Diptera, subordem Nematocera,
 Infraordem Culicomorpha, Superfamilia Simulioidea, família Simuliidae. 
 CARACTERÍSTICAS DE CADA FASE
-Adultos - Na fase adulta os borrachudos medem entre 1 e 5 mm de comprimento,
-corpo robusto com diferentes cores escuras (pretos e marrons escuros). Algumas espécies
+Adultos - Na fase adulta os borrachudos medem entre 1 e 5 mm de comprimento, corpo robusto com diferentes cores escuras (pretos e marrons escuros). Algumas espécies
 apresentam coloração amarelo-alaranjado ou cinza-claro (HAMADA; MARDINI, 2001). (Figura
 1). Possui asas grandes e largas que se fecham uma sobre a outra quando em repouso. Seu
 aparelho bucal é do tipo sugador.
