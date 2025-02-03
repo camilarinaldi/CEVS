@@ -71,7 +71,7 @@ if calhas.geometry.geom_type.isin(['Point']).all():
         lon=calhas['lon'],
         lat=calhas['lat'],
         mode='markers',
-        marker=dict(size=8, color='blue'),
+        marker=dict(size=6, color='blue'),
         name='Calhas'
     ))
 
@@ -80,7 +80,7 @@ fig.update_layout(
     mapbox=dict(
         style="carto-positron",
         center={'lat': -30.452349861219243, 'lon': -53.55320517512141},
-        zoom=5.5
+        zoom=5
     ),
     margin={"r": 0, "t": 0, "l": 0, "b": 0},
     showlegend=False,  # Desativa a exibição de legendas
