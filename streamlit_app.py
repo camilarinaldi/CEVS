@@ -35,7 +35,7 @@ regioes_de_saude = gpd.read_file('https://raw.githubusercontent.com/camilarinald
 coordenadorias = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/RS_por_CRS.json')
 
 # Carrega dados geoespaciais do novo arquivo .geojson
-calhas = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/calhas%20fluviais.geojson')
+calhas = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/coordenadas_calhas.geojson')
 
 # Inicializar o mapa
 fig = go.Figure()
