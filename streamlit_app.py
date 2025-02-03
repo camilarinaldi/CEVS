@@ -80,7 +80,9 @@ fig.update_layout(
     mapbox=dict(
         style="carto-positron",
         center={'lat': -30.452349861219243, 'lon': -53.55320517512141},
-        zoom=5
+        width=1000,
+        height=700,
+        zoom=5.3
     ),
     margin={"r": 0, "t": 0, "l": 0, "b": 0},
     showlegend=False,  # Desativa a exibição de legendas
