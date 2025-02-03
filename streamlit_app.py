@@ -82,7 +82,7 @@ fig.update_layout(
         center={'lat': -30.452349861219243, 'lon': -53.55320517512141},
         height=600, 
         size_max=500, 
-        hover_name='Calhas'
+        hover_name='Calhas',
         zoom=5.3
     ),
     margin={"r": 0, "t": 0, "l": 0, "b": 0},
