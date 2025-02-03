@@ -19,7 +19,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state='collapsed'
 ) 
-col1, col2, col3 = st.columns([1,2,1])
+col1, col2, col3 = st.columns([1,4,1])
 
 col3.image('logo_cevs (1).png', width=150)
 col2.markdown("<h1 style='text-align: center;'>Painel de Monitoramento de Simulídeos</h1>", unsafe_allow_html=True)
