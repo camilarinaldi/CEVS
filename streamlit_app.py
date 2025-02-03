@@ -90,4 +90,51 @@ fig.update_layout(
 # Exibir o mapa no Streamlit
 st.plotly_chart(fig)
 
-aba_painel,aba_analise, aba_sobre, aba_indicador, aba_referencias, = st.tabs(['Painel','Análise', 'Sobre','Pactuação - Indicador 9', 'Documentos de Referência'])
+aba_painel,aba_analise, aba_sobre, aba_indicador, = st.tabs(['Painel','Análise', 'Sobre','Pactuação - Indicador 9',])
+
+with aba_sobre:
+    
+st.header('O que são os Simulídeos?')
+ coluna_texto, coluna_imagens = st.columns([2,3])
+ with coluna_texto:
+  st.markdown(
+   """
+Os borrachudos pertencem à classe Insecta, ordem Diptera, subordem Nematocera,
+Infraordem Culicomorpha, Superfamilia Simulioidea, família Simuliidae. 
+CARACTERÍSTICAS DE CADA FASE
+Adultos - Na fase adulta os borrachudos medem entre 1 e 5 mm de comprimento,
+corpo robusto com diferentes cores escuras (pretos e marrons escuros). Algumas espécies
+apresentam coloração amarelo-alaranjado ou cinza-claro (HAMADA; MARDINI, 2001). (Figura
+1). Possui asas grandes e largas que se fecham uma sobre a outra quando em repouso. Seu
+aparelho bucal é do tipo sugador.
+
+Ovos – Os ovos são de pequenas dimensões, com formato semitriangular (Figura 2).
+As fêmeas (geralmente após o repasto sanguíneo) depositam os ovos em vários tipos de
+substratos submersos ou sobre a água (PEPINELLI, 2008). São colocados pelas fêmeas durante o dia, em massas de número variável, 
+podendo chegar a centenas (HAMADA; MARDINI, 2011) (Figura 2). O período de incubação leva entre 4 a 6 dias dependendo da temperatura,
+e uma fêmea coloca em média 236,9 ovos em sua vida.
+
+Larvas – O estágio de larva apresenta uma forte cápsula cefálica, com um par de grandes
+leques filtradores que auxiliam na alimentação. Próximo à cabeça, ventralmente, a larva
+apresenta um pé e, no final do abdome apresenta um disco de ganchos com o qual se prende na
+vegetação ou nas pedras dos riachos, além de papilas anais para trocas iônicas (Figuras 3a e 3b).
+
+Pupas - As larvas do último estádio da maioria das espécies de Simulídeos constroem
+um casulo completo (fixo a um substrato) durante o início do processo de pupação. Segundo
+Crosskey (1990), o casulo è feito de seda secretada pelas glândulas salivares das larvas. O tempo
+necessário entre o início da pupação e a emergência do adulto depende de características
+ambientais, principalmente a temperatura da água e é intrínseco de cada espécie. Em geral,
+o período de pupação varia entre 1 e 2 semanas (Figura 4).
+ 
+   """
+  )
+
+with coluna_imagens:
+ col1, col2 = st.columns(2)
+ col1.image('figura 1.png', width=350, caption='Ovos de Aedes aegypti na palheta')
+ col2.image('figura 2.png', width=350, caption='Ilustração digital de ovos de Aedes aegypti - Imagem Fundação Oswaldo Cruz')
+ col1.image('fidura 3.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
+ col1.image('figura 4.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
+
+
+
