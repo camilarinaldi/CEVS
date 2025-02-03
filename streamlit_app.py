@@ -90,3 +90,4 @@ fig.update_layout(
 # Exibir o mapa no Streamlit
 st.plotly_chart(fig)
 
+aba_painel,aba_analise, aba_sobre, aba_indicador, aba_referencias, = st.tabs(['Painel','Análise', 'Sobre','Pactuação - Indicador 9', 'Documentos de Referência'])
