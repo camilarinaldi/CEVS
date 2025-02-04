@@ -116,3 +116,5 @@ with aba_sobre:
         col2.image('figura 2.png', width=350, caption='Ilustração digital de ovos de Aedes aegypti - Imagem Fundação Oswaldo Cruz')
         col1.image('figura 3.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
         col1.image('figura 4.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
+
+streamlit run seu_arquivo.py
