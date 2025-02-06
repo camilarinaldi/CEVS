@@ -135,4 +135,5 @@ with aba_sobre:
 
 with aba_indicador:
     st.write("Conteúdo da aba 'Pactuação - Indicador 9' será adicionado aqui.")
-  
+
+streamlit --version
