@@ -1,4 +1,4 @@
-# Importação das bibliotecas 
+#Importação das bibliotecas 
 import requests
 import pandas as pd
 import plotly.express as px
@@ -15,12 +15,12 @@ from plotly.subplots import make_subplots
 # Configurações da página
 st.set_page_config(
     page_title="Simulídeos",
-    page_icon=":bug:",
+    page_icon="	:bug:",
     layout="wide",
     initial_sidebar_state='collapsed'
 ) 
+col1, col2, col3 = st.columns([1,2,1])
 
-col1, col2, col3 = st.columns([1,4,1])
 col3.image('logo_cevs (1).png', width=150)
 col2.markdown("<h1 style='text-align: center;'>Painel de Monitoramento de Simulídeos</h1>", unsafe_allow_html=True)
 col1.image('logo_estado (3).png', width=250)
@@ -89,5 +89,3 @@ fig.update_layout(
 
 # Exibir o mapa no Streamlit
 st.plotly_chart(fig)
-
-
