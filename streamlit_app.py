@@ -21,9 +21,9 @@ st.set_page_config(
 ) 
 
 col1, col2, col3 = st.columns([1,4,1])
-col3.image('logo_cevs.png', width=150)
+col3.image('logo_cevs (1).png', width=150)
 col2.markdown("<h1 style='text-align: center;'>Painel de Monitoramento de Simulídeos</h1>", unsafe_allow_html=True)
-col1.image('logo_estado.png', width=250)
+col1.image('logo_estado (3).png', width=250)
 
 # Carrega dados geoespaciais dos municípios do Rio Grande do Sul
 municipios = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/RS_Municipios_2021.json')
