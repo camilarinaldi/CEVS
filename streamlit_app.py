@@ -89,3 +89,49 @@ fig.update_layout(
 
 # Exibir o mapa no Streamlit
 st.plotly_chart(fig)
+
+# Criar abas no painel
+aba_sobre, aba_indicador = st.tabs(['Sobre', 'Pactuação - Indicador 9'])
+
+with aba_sobre:
+    # Adicionar título na aba
+    st.header('O que são os Simulídeos?')
+    
+    # Criar colunas para organizar o layout
+    coluna_texto, coluna_imagens = st.columns([2,3])
+
+    with coluna_texto:
+        st.markdown(
+        """
+        Os borrachudos pertencem à classe Insecta, ordem Diptera, subordem Nematocera,
+        Infraordem Culicomorpha, Superfamilia Simulioidea, família Simuliidae. 
+        CARACTERÍSTICAS DE CADA FASE
+
+        **Adultos** - Na fase adulta os borrachudos medem entre 1 e 5 mm de comprimento, corpo robusto com diferentes cores escuras (pretos e marrons escuros). Algumas espécies
+        apresentam coloração amarelo-alaranjado ou cinza-claro (HAMADA; MARDINI, 2001).
+
+        **Ovos** – Os ovos são de pequenas dimensões, com formato semitriangular. As fêmeas depositam os ovos em vários tipos de
+        substratos submersos ou sobre a água (PEPINELLI, 2008). São colocados pelas fêmeas durante o dia, em massas de número variável, 
+        podendo chegar a centenas (HAMADA; MARDINI, 2011). O período de incubação leva entre 4 a 6 dias dependendo da temperatura,
+        e uma fêmea coloca em média 236,9 ovos em sua vida.
+
+        **Larvas** – O estágio de larva apresenta uma forte cápsula cefálica, com um par de grandes
+        leques filtradores que auxiliam na alimentação.
+
+        **Pupas** - As larvas do último estádio da maioria das espécies de Simulídeos constroem
+        um casulo completo (fixo a um substrato) durante o início do processo de pupação. O tempo
+        necessário entre o início da pupação e a emergência do adulto depende de características
+        ambientais, principalmente a temperatura da água e é intrínseco de cada espécie. Em geral,
+        o período de pupação varia entre 1 e 2 semanas.
+        """
+        )
+
+    with coluna_imagens:
+        col1, col2 = st.columns(2)
+        col1.image('figura 1.png', width=350, caption='Ovos de Aedes aegypti na palheta')
+        col2.image('figura 2.png', width=350, caption='Ilustração digital de ovos de Aedes aegypti - Imagem Fundação Oswaldo Cruz')
+        col1.image('figura 3.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
+        col1.image('figura 4.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
+
+with aba_indicador:
+    st.write("Conteúdo da aba 'Pactuação - Indicador 9' será adicionado aqui.")
