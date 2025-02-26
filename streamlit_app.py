@@ -85,23 +85,13 @@ with aba_programa:
     # Adicionar título na aba
     st.header('Como funciona o programa estadual?')
     # Inicializar o mapa
-fig = go.Figure()
-
-# Adicionar linhas das coordenadorias
-coordenadorias_boundaries = coordenadorias.boundary
-for geom in coordenadorias_boundaries:
-    if geom.geom_type == 'LineString':
-        coords = list(geom.coords)
-        fig.add_trace(go.Scattermapbox(
-            lon=[c[0] for c in coords],
-            lat=[c[1] for c in coords],
-            mode='lines',
-            line=dict(color='black', width=1),
-            name='Coordenadorias'
-        ))
-    elif geom.geom_type == 'MultiLineString':
-        for line in geom.geoms:
-            coords = list(line.coords)
+    fig = go.Figure()
+    
+    # Adicionar linhas das coordenadorias
+    coordenadorias_boundaries = coordenadorias.boundary
+    for geom in coordenadorias_boundaries:
+        if geom.geom_type == 'LineString':
+            coords = list(geom.coords)
             fig.add_trace(go.Scattermapbox(
                 lon=[c[0] for c in coords],
                 lat=[c[1] for c in coords],
@@ -109,30 +99,40 @@ for geom in coordenadorias_boundaries:
                 line=dict(color='black', width=1),
                 name='Coordenadorias'
             ))
-
-# Adicionar pontos das calhas
-if calhas.geometry.geom_type.isin(['Point']).all():
-    calhas['lon'] = calhas.geometry.x
-    calhas['lat'] = calhas.geometry.y
-    fig.add_trace(go.Scattermapbox(
-        lon=calhas['lon'],
-        lat=calhas['lat'],
-        mode='markers',
-        marker=dict(size=6, color='blue'),
-        name='Calhas'
-    ))
-
-# Configurar o layout do mapa
-fig.update_layout(
-    mapbox=dict(
-        style="carto-positron",
-        center={'lat': -30.452349861219243, 'lon': -53.55320517512141},
-        zoom=5.3
-    ),
-    margin={"r": 0, "t": 0, "l": 0, "b": 0},
-    showlegend=False,  # Desativa a exibição de legendas
-    title="Mapa com Linhas e Pontos"
-)
-
-# Exibir o mapa no Streamlit
-st.plotly_chart(fig)
+        elif geom.geom_type == 'MultiLineString':
+            for line in geom.geoms:
+                coords = list(line.coords)
+                fig.add_trace(go.Scattermapbox(
+                    lon=[c[0] for c in coords],
+                    lat=[c[1] for c in coords],
+                    mode='lines',
+                    line=dict(color='black', width=1),
+                    name='Coordenadorias'
+                ))
+    
+    # Adicionar pontos das calhas
+    if calhas.geometry.geom_type.isin(['Point']).all():
+        calhas['lon'] = calhas.geometry.x
+        calhas['lat'] = calhas.geometry.y
+        fig.add_trace(go.Scattermapbox(
+            lon=calhas['lon'],
+            lat=calhas['lat'],
+            mode='markers',
+            marker=dict(size=6, color='blue'),
+            name='Calhas'
+        ))
+    
+    # Configurar o layout do mapa
+    fig.update_layout(
+        mapbox=dict(
+            style="carto-positron",
+            center={'lat': -30.452349861219243, 'lon': -53.55320517512141},
+            zoom=5.3
+        ),
+        margin={"r": 0, "t": 0, "l": 0, "b": 0},
+        showlegend=False,  # Desativa a exibição de legendas
+        title="Mapa com Linhas e Pontos"
+    )
+    
+    # Exibir o mapa no Streamlit
+    st.plotly_chart(fig)
