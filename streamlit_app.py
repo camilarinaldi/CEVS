@@ -91,7 +91,7 @@ fig.update_layout(
 st.plotly_chart(fig)
 
 # Criar abas no painel
-aba_sobre, aba_indicador = st.tabs(['Sobre', 'Pactuação - Indicador 9'])
+aba_sobre, aba_indicador = st.tabs(['Sobre', 'Programa'])
 
 with aba_sobre:
     # Adicionar título na aba
@@ -105,7 +105,8 @@ with aba_sobre:
         """
         Os borrachudos pertencem à classe Insecta, ordem Diptera, subordem Nematocera,
         Infraordem Culicomorpha, Superfamilia Simulioidea, família Simuliidae. 
-        CARACTERÍSTICAS DE CADA FASE
+        
+        **CARACTERÍSTICAS DE CADA FASE:**
 
         **Adultos** - Na fase adulta os borrachudos medem entre 1 e 5 mm de comprimento, corpo robusto com diferentes cores escuras (pretos e marrons escuros). Algumas espécies
         apresentam coloração amarelo-alaranjado ou cinza-claro (HAMADA; MARDINI, 2001).
@@ -133,5 +134,5 @@ with aba_sobre:
         col1.image('figura 3.png', width=350, caption='Figura 3. Simulium orbitale. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus -AM (2005)')
         col2.image('figura 4.png', width=350, caption='Figura 4. Pupas de Simulium pertinax. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus - AM (2005)')
 
-with aba_indicador:
+with aba_programa:
     st.write("Conteúdo da aba 'Pactuação - Indicador 9' será adicionado aqui.")
