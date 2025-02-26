@@ -83,7 +83,7 @@ with aba_sobre:
 
 with aba_programa:
     # Adicionar título na aba
-  st.header('Como funciona o programa estadual?')
+    st.header('Como funciona o programa estadual?')
 
     # Inicializar o mapa
     fig = go.Figure()
