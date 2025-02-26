@@ -37,7 +37,54 @@ coordenadorias = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/
 # Carrega dados geoespaciais do novo arquivo .geojson
 calhas = gpd.read_file('https://raw.githubusercontent.com/camilarinaldi/CEVS/refs/heads/main/coordenadas_calhas.geojson')
 
-# Inicializar o mapa
+# Criar abas no painel
+aba_sobre, aba_indicador = st.tabs(['Sobre', 'Programa'])
+
+with aba_sobre:
+    # Adicionar título na aba
+    st.header('O que são os Simulídeos?')
+    
+    # Criar colunas para organizar o layout
+    coluna_texto, coluna_imagens = st.columns([2,3])
+
+    with coluna_texto:
+        st.markdown(
+        """
+        Os borrachudos pertencem à classe Insecta, ordem Diptera, subordem Nematocera,
+        Infraordem Culicomorpha, Superfamilia Simulioidea, família Simuliidae. 
+        
+        **CARACTERÍSTICAS DE CADA FASE:**
+
+        **Ovos** – Os ovos são de pequenas dimensões, com formato semitriangular, como os representados pela Figura 1. As fêmeas depositam os ovos em vários tipos de
+        substratos submersos ou sobre a água (PEPINELLI, 2008). São colocados pelas fêmeas durante o dia, em massas de número variável, 
+        podendo chegar a centenas (HAMADA; MARDINI, 2011). O período de incubação leva entre 4 a 6 dias dependendo da temperatura,
+        e uma fêmea coloca em média 236,9 ovos em sua vida.
+
+        **Larvas** – O estágio de larva apresenta uma forte cápsula cefálica, com um par de grandes
+        leques filtradores que auxiliam na alimentação.
+
+        **Pupas** - As larvas do último estádio da maioria das espécies de Simulídeos constroem
+        um casulo completo (fixo a um substrato) durante o início do processo de pupação. O tempo
+        necessário entre o início da pupação e a emergência do adulto depende de características
+        ambientais, principalmente a temperatura da água e é intrínseco de cada espécie. Em geral,
+        o período de pupação varia entre 1 e 2 semanas.
+
+         **Adultos** - Na fase adulta os borrachudos medem entre 1 e 5 mm de comprimento, corpo robusto com diferentes cores escuras (pretos e marrons escuros). Algumas espécies
+        apresentam coloração amarelo-alaranjado ou cinza-claro (HAMADA; MARDINI, 2001).
+        """
+        )
+
+    with coluna_imagens:
+        col1, col2 = st.columns(2)
+        col1.image('figura 2.png', width=350, caption='Figura 1. Massa de ovos. Foto: Neusa Hamada, INPA-AM / Fonte: RIO GRANDE DO SUL (2006)')
+        col2.image('figura 3.png', width=350, caption='Figura 2. Simulium orbitale. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus -AM (2005)')
+        col1.image('figura 4.png', width=350, caption='Figura 3. Pupas de Simulium pertinax. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus - AM (2005)')
+        col2.image('figura 1.png', width=350, caption='Figura 4. Simulium perflavum - Programa Estadual/ RS. Fonte: Edmilson dos Santos (DVAS/CEVS/SES-RS)')
+
+with aba_programa:
+    # Adicionar título na aba
+    st.header('Como funciona o programa estadual?')
+    # Inicializar o mapa
 fig = go.Figure()
 
 # Adicionar linhas das coordenadorias
@@ -89,50 +136,3 @@ fig.update_layout(
 
 # Exibir o mapa no Streamlit
 st.plotly_chart(fig)
-
-# Criar abas no painel
-aba_sobre, aba_indicador = st.tabs(['Sobre', 'Programa'])
-
-with aba_sobre:
-    # Adicionar título na aba
-    st.header('O que são os Simulídeos?')
-    
-    # Criar colunas para organizar o layout
-    coluna_texto, coluna_imagens = st.columns([2,3])
-
-    with coluna_texto:
-        st.markdown(
-        """
-        Os borrachudos pertencem à classe Insecta, ordem Diptera, subordem Nematocera,
-        Infraordem Culicomorpha, Superfamilia Simulioidea, família Simuliidae. 
-        
-        **CARACTERÍSTICAS DE CADA FASE:**
-
-        **Adultos** - Na fase adulta os borrachudos medem entre 1 e 5 mm de comprimento, corpo robusto com diferentes cores escuras (pretos e marrons escuros). Algumas espécies
-        apresentam coloração amarelo-alaranjado ou cinza-claro (HAMADA; MARDINI, 2001).
-
-        **Ovos** – Os ovos são de pequenas dimensões, com formato semitriangular. As fêmeas depositam os ovos em vários tipos de
-        substratos submersos ou sobre a água (PEPINELLI, 2008). São colocados pelas fêmeas durante o dia, em massas de número variável, 
-        podendo chegar a centenas (HAMADA; MARDINI, 2011). O período de incubação leva entre 4 a 6 dias dependendo da temperatura,
-        e uma fêmea coloca em média 236,9 ovos em sua vida.
-
-        **Larvas** – O estágio de larva apresenta uma forte cápsula cefálica, com um par de grandes
-        leques filtradores que auxiliam na alimentação.
-
-        **Pupas** - As larvas do último estádio da maioria das espécies de Simulídeos constroem
-        um casulo completo (fixo a um substrato) durante o início do processo de pupação. O tempo
-        necessário entre o início da pupação e a emergência do adulto depende de características
-        ambientais, principalmente a temperatura da água e é intrínseco de cada espécie. Em geral,
-        o período de pupação varia entre 1 e 2 semanas.
-        """
-        )
-
-    with coluna_imagens:
-        col1, col2 = st.columns(2)
-        col1.image('figura 1.png', width=350, caption='Figura 1. Simulium perflavum - Programa Estadual/ RS. Fonte: Edmilson dos Santos (DVAS/CEVS/SES-RS)')
-        col2.image('figura 2.png', width=350, caption='Figura 2. Massa de ovos. Foto: Neusa Hamada, INPA-AM / Fonte: RIO GRANDE DO SUL (2006)')
-        col1.image('figura 3.png', width=350, caption='Figura 3. Simulium orbitale. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus -AM (2005)')
-        col2.image('figura 4.png', width=350, caption='Figura 4. Pupas de Simulium pertinax. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus - AM (2005)')
-
-with aba_programa:
-    st.write("Conteúdo da aba 'Pactuação - Indicador 9' será adicionado aqui.")
