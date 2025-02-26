@@ -128,10 +128,10 @@ with aba_sobre:
 
     with coluna_imagens:
         col1, col2 = st.columns(2)
-        col1.image('figura 1.png', width=350, caption='Ovos de Aedes aegypti na palheta')
-        col2.image('figura 2.png', width=350, caption='Ilustração digital de ovos de Aedes aegypti - Imagem Fundação Oswaldo Cruz')
-        col1.image('figura 3.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
-        col1.image('figura 4.png', width=350, caption='Preparação de armadilha - Imagem Fundação Oswaldo Cruz')
+        col1.image('figura 1.png', width=350, caption='Figura 1. Simulium perflavum - Programa Estadual/ RS. Fonte: Edmilson dos Santos (DVAS/CEVS/SES-RS)')
+        col2.image('figura 2.png', width=350, caption='Figura 2. Massa de ovos. Foto: Neusa Hamada, INPA-AM / Fonte: RIO GRANDE DO SUL (2006)')
+        col1.image('figura 3.png', width=350, caption='Figura 3. Simulium orbitale. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus -AM (2005)')
+        col2.image('figura 4.png', width=350, caption='Figura 4. Pupas de Simulium pertinax. Fonte: RIO GRANDE DO SUL, 2006. Foto: Neusa Hamada INPA – Manaus - AM (2005)')
 
 with aba_indicador:
     st.write("Conteúdo da aba 'Pactuação - Indicador 9' será adicionado aqui.")
