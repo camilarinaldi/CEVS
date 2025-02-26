@@ -14,7 +14,7 @@ from plotly.subplots import make_subplots
  
 # Configurações da página
 st.set_page_config(
-    page_title="Ovitrampas",
+    page_title="Simulídeos",
     page_icon="	:bug:",
     layout="wide",
     initial_sidebar_state='collapsed'
@@ -22,7 +22,7 @@ st.set_page_config(
 col1, col2, col3 = st.columns([1,4,1])
 
 col3.image('logo_cevs (1).png', width=150)
-col2.header('Painel de Monitoramento de Aedes aegypti através de Ovitrampas')
+col2.header('Painel de Monitoramento de Simulídeos')
 col1.image('logo_estado (3).png', width=250)
 
 # Carrega dados geoespaciais dos municípios do Rio Grande do Sul
