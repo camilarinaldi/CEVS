@@ -84,9 +84,10 @@ with aba_sobre:
 with aba_programa:
     # Adicionar título na aba
     st.header('Como funciona o programa estadual?')
+
     # Inicializar o mapa
     fig = go.Figure()
-    
+
     # Adicionar linhas das coordenadorias
     coordenadorias_boundaries = coordenadorias.boundary
     for geom in coordenadorias_boundaries:
@@ -109,7 +110,7 @@ with aba_programa:
                     line=dict(color='black', width=1),
                     name='Coordenadorias'
                 ))
-    
+
     # Adicionar pontos das calhas
     if calhas.geometry.geom_type.isin(['Point']).all():
         calhas['lon'] = calhas.geometry.x
@@ -121,7 +122,7 @@ with aba_programa:
             marker=dict(size=6, color='blue'),
             name='Calhas'
         ))
-    
+
     # Configurar o layout do mapa
     fig.update_layout(
         mapbox=dict(
@@ -130,9 +131,9 @@ with aba_programa:
             zoom=5.3
         ),
         margin={"r": 0, "t": 0, "l": 0, "b": 0},
-        showlegend=False,  # Desativa a exibição de legendas
+        showlegend=False,
         title="Mapa com Linhas e Pontos"
     )
-    
+
     # Exibir o mapa no Streamlit
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
