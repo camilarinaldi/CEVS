@@ -120,7 +120,11 @@ with aba_programa:
             lat=calhas['lat'],
             mode='markers',
             marker=dict(size=6, color='blue'),
-            name='Calhas'
+            name='Calhas',
+            text=calhas['municipio'],  # Substitua 'municipio' pela coluna que contém o nome da cidade
+            hoverinfo='text'
+))
+
         ))
 
     # Configurar o layout do mapa
